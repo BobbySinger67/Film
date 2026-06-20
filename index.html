@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CineFlix - Seu Site de Filmes</title>
+    <style>
+        /* Estilos Gerais */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #141414;
+            color: #ffffff;
+        }
+
+        a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        /* Cabeçalho (Navbar) */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 4%;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0) 100%);
+            z-index: 1000;
+        }
+
+        .logo {
+            color: #E50914;
+            font-size: 2rem;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 20px;
+        }
+
+        nav ul li a:hover {
+            color: #b3b3b3;
+            transition: 0.3s;
+        }
+
+        /* Banner Principal */
+        .banner {
+            background: linear-gradient(to top, #141414 10%, rgba(0,0,0,0) 60%), 
+                        url('https://images.unsplash.com/photo-1536440136628-849c177e76a1?q=80&w=1925&auto=format&fit=crop') no-repeat center center/cover;
+            height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 0 4%;
+        }
+
+        .banner-content {
+            max-width: 600px;
+        }
+
+        .banner-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 10px;
+        }
+
+        .banner-content p {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            color: #cccccc;
+        }
+
+        .btn {
+            background-color: #E50914;
+            color: white;
+            padding: 10px 24px;
+            border: none;
+            font-size: 1rem;
+            font-weight: bold;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #b81d24;
+        }
+
+        /* Seção de Filmes (Grid) */
+        .movies-section {
+            padding: 40px 4%;
+        }
+
+        .movies-section h2 {
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+        }
+
+        .movies-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .movie-card {
+            background-color: #2f2f2f;
+            border-radius: 6px;
+            overflow: hidden;
+            transition: transform 0.3s;
+            cursor: pointer;
+        }
+
+        .movie-card:hover {
+            transform: scale(1.05);
+        }
+
+        .movie-card img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+        }
+
+        .movie-info {
+            padding: 12px;
+        }
+
+        .movie-info h3 {
+            font-size: 1rem;
+            margin-bottom: 5px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .movie-info span {
+            color: #46d369;
+            font-size: 0.9rem;
+            font-weight: bold;
+        }
+
+        /* Rodapé */
+        footer {
+            text-align: center;
+            padding: 30px;
+            color: #808080;
+            font-size: 0.9rem;
+            border-top: 1px solid #2f2f2f;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">CINEFLIX</div>
+        <nav>
+            <ul>
+                <li><a href="#">Início</a></li>
+                <li><a href="#">Filmes</a></li>
+                <li><a href="#">Séries</a></li>
+                <li><a href="#">Minha Lista</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="banner">
+        <div class="banner-content">
+            <h1>A Jornada Espacial</h1>
+            <p>Um grupo de astronautas viaja pelos confins do universo para encontrar um novo lar para a humanidade. Uma aventura visualmente impressionante.</p>
+            <button class="btn">Assistir Agora</button>
+        </div>
+    </section>
+
+    <main class="movies-section">
+        <h2>Populares no CineFlix</h2>
+        <div class="movies-grid">
+            
+            <div class="movie-card">
+                <img src="https://images.unsplash.com/photo-1485846234645-a62644f84728?q=80&w=2059&auto=format&fit=crop" alt="Filme 1">
+                <div class="movie-info">
+                    <h3>Luzes da Cidade</h3>
+                    <span>95% Relevante</span>
+                </div>
+            </div>
+
+            <div class="movie-card">
+                <img src="https://images.unsplash.com/photo-1517604931442-7e0c8ed2963c?q=80&w=2070&auto=format&fit=crop" alt="Filme 2">
+                <div class="movie-info">
+                    <h3>O Clássico Cinema</h3>
+                    <span>88% Relevante</span>
+                </div>
+            </div>
+
+            <div class="movie-card">
+                <img src="https://images.unsplash.com/photo-1440404653325-ab127d49abc1?q=80&w=2070&auto=format&fit=crop" alt="Filme 3">
+                <div class="movie-info">
+                    <h3>Bastidores</h3>
+                    <span>92% Relevante</span>
+                </div>
+            </div>
+
+            <div class="movie-card">
+                <img src="https://images.unsplash.com/photo-1509281373149-e957c6296406?q=80&w=1928&auto=format&fit=crop" alt="Filme 4">
+                <div class="movie-info">
+                    <h3>Neon Dreams</h3>
+                    <span>85% Relevante</span>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 CineFlix. Criado para o Portfólio do GitHub.</p>
+    </footer>
+
+</body>
+</html>
