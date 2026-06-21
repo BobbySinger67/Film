@@ -173,16 +173,57 @@
         </nav>
     </header>
 
-    <section class="banner">
+  <section class="banner" id="banner-carrossel">
         <div class="banner-content">
-            <h1>A Jornada Espacial</h1>
-            <p>Um grupo de astronautas viaja pelos confins do universo para encontrar um novo lar para a humanidade. Uma aventura visualmente impressionante.</p>
+            <h1 id="banner-titulo">A Jornada Espacial</h1>
+            <p id="banner-desc">Um grupo de astronautas viaja pelos confins do universo para encontrar um novo lar para a humanidade. Uma aventura visualmente impressionante.</p>
             <button class="btn">Assistir Agora</button>
         </div>
     </section>
 
+    <script>
+        // Lista de filmes do banner (Você pode mudar as imagens, títulos e descrições aqui)
+        const filmesBanner = [
+            {
+                titulo: "A Jornada Espacial",
+                descricao: "Um grupo de astronautas viaja pelos confins do universo para encontrar um novo lar para a humanidade. Uma aventura visualmente impressionante.",
+                imagem: "https://images.unsplash.com/photo-1536440136628-849c177e76a1?q=80&w=1925&auto=format&fit=crop"
+            },
+            {
+                titulo: "Neon Dreams",
+                descricao: "Nas ruas cobertas de neon de uma metrópole futurista, um detetive descobre uma conspiração que pode mudar o rumo da sociedade.",
+                imagem: "https://images.unsplash.com/photo-1509281373149-e957c6296406?q=80&w=1928&auto=format&fit=crop"
+            },
+            {
+                titulo: "Luzes da Cidade",
+                descricao: "Um olhar profundo e artístico sobre os encontros e desencontros de vidas paralelas na maior cidade do mundo.",
+                imagem: "https://images.unsplash.com/photo-1485846234645-a62644f84728?q=80&w=2059&auto=format&fit=crop"
+            }
+        ];
+
+        let filmeAtual = 0;
+        const bannerElement = document.getElementById('banner-carrossel');
+        const tituloElement = document.getElementById('banner-titulo');
+        const descElement = document.getElementById('banner-desc');
+
+        function mudarFilme() {
+            filmeAtual = (filmeAtual + 1) % filmesBanner.length;
+            const filme = Array.isArray(filmesBanner) ? filmesBanner[filmeAtual] : null;
+            
+            if (filme) {
+                // Atualiza os textos e a imagem de fundo
+                tituloElement.textContent = filme.titulo;
+                descElement.textContent = filme.descricao;
+                bannerElement.style.backgroundImage = `linear-gradient(to top, #141414 10%, rgba(0,0,0,0) 60%), url('${filme.imagem}')`;
+            }
+        }
+
+        // Muda de filme a cada 5 segundos (5000 milissegundos)
+        setInterval(mudarFilme, 5000);
+    </script>
+
     <main class="movies-section">
-        <h2>Populares no CineFlix</h2>
+        <h2>Todos os Filmes</h2>
         <div class="movies-grid">
             
             <a href="https://mega.nz/file/W3gXjSDK#OdxPivyzwLICD7JyVc5-eYTDzUV5f0_67s6QgnATwKA" target="_blank">
